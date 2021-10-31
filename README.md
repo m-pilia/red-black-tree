@@ -46,6 +46,21 @@ end Sample;
 A simple unit test is written with 
 [AUnit](http://libre.adacore.com/tools/aunit/).
 
+Build
+=====
+
+The project builds the test executable and can be build from an IDE by opening
+the `.gpr` file with GNAT GPS, or from the command line with `gprbuild` by
+running:
+
+```
+gprbuild red_black_tree.gpr
+```
+
+The project file assumes that AUnit is installed in `/usr/share/gpr/aunit.gpr`.
+If AUnit is installed elsewhere, the `with` declaration in `red_black_tree.gpr`
+should be adjusted accordingly.
+
 License
 =======
 
