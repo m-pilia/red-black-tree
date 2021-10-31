@@ -1,4 +1,4 @@
-with "/usr/gnat/lib/gnat/aunit.gpr";
+with "/usr/share/gpr/aunit.gpr";
 
 project Red_Black_Tree is
 
