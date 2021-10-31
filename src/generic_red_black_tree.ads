@@ -136,12 +136,14 @@ package Generic_Red_Black_Tree is
 
     -- Type defining a reference to a key (needed for Ada 2012 iteration).
     type Reference_Type(Element: not null access T)
-        is private;
+        is private
+        with Implicit_Dereference => Element;
 
     -- Type defining a constant reference to a key (needed for Ada 2012
     -- iteration).
     type Constant_Reference_Type(Element: not null access constant T) 
-        is private;
+        is private
+        with Implicit_Dereference => Element;
 
     -- Return a reference to the key under the cursor.
     function Reference(Container: aliased Red_Black_Tree; Position: Cursor)
@@ -201,12 +203,10 @@ private
         end record;
 
     type Reference_Type(Element: not null access T) is
-        null record
-        with Implicit_Dereference => Element;
+        null record;
 
     type Constant_Reference_Type(Element: not null access constant T) is
-        null record
-        with Implicit_Dereference => Element;
+        null record;
 
     overriding
     function First(Object: Iterator) return Cursor;
